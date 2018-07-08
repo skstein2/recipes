@@ -15,8 +15,10 @@ setwd("~/Desktop/allrecipes")
 # Load data from allrecipes.com
 data1 <- read.table("indian10.txt", header=FALSE, quote="", sep="|")
 data2 <- read.table("indian20.txt", header=FALSE, quote="", sep="|")
+data3 <- read.table("indian30.txt", header=FALSE, quote="", sep="|")
 data2$V2 <- as.factor(data2$V2)
-data <- rbind(data1, data2)
+data3$V2 <- as.factor(data3$V2)
+data <- rbind(data1, data2, data3)
 
 # Clean data
 names(data) <- c("recipetitle", "madeitcount", "reviewcount", "starrating", "readyintime", "ingredients", "steps", "categories")
